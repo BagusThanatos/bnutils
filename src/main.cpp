@@ -1,15 +1,15 @@
+#include <stdio.h>
+
 #if defined(_WIN64) || defined(_WIN32)
-#include <windows.h>
+#include "getopt.h"
 #else
-#include <string.h>
+#include <getopt.h>
 #endif
 
+/*
 void print(...){
-    
-};
-
-int
-main(int argc, char *argv[], char *envp[]){
+     This is for replacing printf
+    Should do it in the future as we're looking how to do so in C.
 #if defined(_WIN64) || defined(_WIN32)
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
     char *bagus = "bagus";
@@ -21,5 +21,24 @@ main(int argc, char *argv[], char *envp[]){
         written,
         NULL);
 #endif
+};
+*/
+
+int
+main(int argc, char *argv[], char *envp[]){
+    
+    printf("Args : ");
+    for(int i=0; i<argc;++i){
+        printf("%s ", argv[i]);
+    };
+    
+    printf("\nRead as:\n");
+    int opt;
+    
+    while((opt=getopt(argc, argv, "ab:"))!=-1){
+        printf("%c\n", opt);
+    };
+    
+    
     return 0;
 };
