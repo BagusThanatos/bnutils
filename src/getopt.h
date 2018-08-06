@@ -39,14 +39,15 @@ char *optstring){
     while(*optstr != '\0'){
         if(*optstr == *opt){
             if (*(optstr+1) == ':') {
-                if(optind + 1 >= argc) {
+                ++optind;
+                if(optind >= argc) {
                     // error here
                     return '?';
                 };
-                
-                optarg = argvp[optind+1];
                 ++optind;
+                optarg = argvp[optind+1];
             };
+            break;
         };
         ++optstr;
     };
