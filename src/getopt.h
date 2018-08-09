@@ -44,15 +44,17 @@ char *optstring){
                     // error here
                     return '?';
                 };
-                ++optind;
                 optarg = argvp[optind+1];
             };
+            ++optind;
             break;
         };
         ++optstr;
     };
-    if(*optstr == '\0') return '?';
-    ++optind;
+    if(*optstr == '\0') {
+        *opt =  '?';
+        ++optind;
+    };
     return *opt;;
 };
 
