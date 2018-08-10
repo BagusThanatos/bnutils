@@ -3,7 +3,11 @@
 #if defined(_WIN64) || defined(_WIN32)
 #include "getopt.h"
 #else
+#if 1
+#include "getopt.h"
+#else
 #include <getopt.h>
+#endif
 #endif
 
 /*
@@ -43,4 +47,4 @@ main(int argc, char *argv[], char *envp[]){
     
     
     return 0;
-};
+}

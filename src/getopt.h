@@ -4,6 +4,14 @@
 
 //#include <unistd.h> TODO(bagus) : should also rewrite this
 
+struct option {
+    const char *name;
+    int         has_arg;
+    int        *flag;
+    int         val;
+};
+
+
 int getopt(
 int argc,
 char *argvp[],
@@ -56,7 +64,7 @@ char *optstring){
         ++optind;
     };
     return *opt;;
-};
+}
 
 int getopt_long(
 int argc, 
@@ -65,7 +73,7 @@ struct option *Longopts,
 int *Longindex){
     
     return 0;
-};
+}
 
 int getopt_long_only(
 int argc,
@@ -75,4 +83,4 @@ struct option *Longopts,
 int *Longindex){
     
     return 0;
-};
+}
