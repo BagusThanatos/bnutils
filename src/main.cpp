@@ -41,7 +41,7 @@ main(int argc, char *argv[], char *envp[]){
     
     while((opt=getopt(argc, argv, "ab:"))!=-1){
         printf("%d\n", optind);
-        printf("%c\n", opt);
+        printf("%c %d\n", opt, opt);
         //if(opt == '?') break;
     };
     

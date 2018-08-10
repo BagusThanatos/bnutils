@@ -1,5 +1,4 @@
--x c
--std=c99
+-std=c++03
 -O3
 -fno-exceptions
 -fno-rtti

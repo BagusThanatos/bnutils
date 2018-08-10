@@ -40,6 +40,8 @@ char *optstring){
         //These two lines below might not needed
         //if (!(opt+1))
         //return -1;
+        //Also, there might be some kind of loop or recursive mechanism here.
+        ++optind;
         return -1;
     };
     char *optstr = optstring;
