@@ -3,7 +3,7 @@
 #if defined(_WIN64) || defined(_WIN32)
 #include "getopt.h"
 #else
-#if 1
+#if 0
 #include "getopt.h"
 #else
 #include <getopt.h>

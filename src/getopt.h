@@ -32,13 +32,15 @@ char *optstring){
         return -1;
     };
     char *opt = argvp[optind];
-    if (!opt || *opt != '-'){
+    if (!opt || '-' != *opt){
         if (*(opt+1) == '-' && !*(opt+2)){
             ++optind;
             return -1;
         };
-        if (!(opt+1))
-            return -1;
+        //These two lines below might not needed
+        //if (!(opt+1))
+        //return -1;
+        return -1;
     };
     char *optstr = optstring;
     if(*optstr == ':') return ':';
